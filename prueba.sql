@@ -57,5 +57,5 @@ SELECT clientes.nombre,facturas.total FROM clientes JOIN facturas ON clientes.id
 
 -- Clientes que compraron producto 6
 
-SELECT nombre FROM clientes WHERE id IN (SELECT facturas.cliente_id FROM facturas JOIN facturas_productos ON facturas.id = facturas_productos.factura_id WHERE producto_id = 6);
+SELECT COUNT(nombre) FROM clientes WHERE id IN (SELECT facturas.cliente_id FROM facturas JOIN facturas_productos ON facturas.id = facturas_productos.factura_id WHERE producto_id = 6);
 
